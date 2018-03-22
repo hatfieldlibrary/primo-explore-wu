@@ -6,9 +6,25 @@
 
 /* We use a CENTRAL_PACKAGE, so use the below line to bootstrap the module */
 
-var app = angular.module('viewCustom', ['angularLoad']);
+var app = angular.module('viewCustom', ['angularLoad', 'reportProblem']);
 
 /************************************* END Bootstrap Script ************************************/
+
+/************************************* BEGIN Customization Variables ************************************/
+
+/*
+ * Here you can enter options to be passed to customization packages to configure them.
+ */
+
+// Report a Problem:
+
+app.constant('reportProblemOptions', {
+    message: "See something that doesn't look right?",
+    button: "Report a Problem",
+    base: "https://library.willamette.edu/external/exlibris/primonew/reportproblem/index.php?"
+});
+
+/************************************* END Chat Area ************************************/
 
 /************************************* BEGIN Chat Area ************************************/
 
@@ -18,8 +34,17 @@ app.component('prmSearchBookmarkFilterAfter', {
 
 /************************************* END Chat Area ************************************/
 
+/************************************* BEGIN Open Access Area ************************************/
+
+app.constant('oadoiOptions', {
+    "imagePath": "custom/LCC/img/oa_50.png",
+    "email": "bkelm@willamette.edu"
+}
+
+/************************************* END Open Access Area ************************************/
+
 /** Show search scopes by default on basic searches **/
-app.component('prmSearchBarAfter', {
+);app.component('prmSearchBarAfter', {
     bindings: { parentCtrl: '<' },
     controller: 'SearchBarAfterController'
 });
@@ -117,4 +142,28 @@ angular.element(document).ready(function () {
 });
 
 /************************************* END Call Central Package Hide Institutions ************************************/
+
+/************************************* BEGIN Report Problem ************************************/
+
+angular.module('reportProblem', []).component('prmActionListAfter', {
+    template: '<div ng-if="show" class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">\
+          <span class="margin-right-small">{{ message }}</span>\
+          <a ng-href="{{ link }}" target="_blank">\
+              <button class="button-with-icon zero-margin md-button md-button-raised md-primoExplore-theme md-ink-ripple" type="button" aria-label="Report a Problem" style="color: #5c92bd;">\
+                  <prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>\
+                  <span style="text-transform: none;">{{ button }}</span>\
+                  <div class="md-ripple-container"></div>\
+              </button>\
+          </a>\
+      </div>\
+      ',
+    controller: ['$scope', '$location', '$httpParamSerializer', 'reportProblemOptions', function ($scope, $location, $httpParamSerializer, reportProblemOptions) {
+        $scope.message = reportProblemOptions.message;
+        $scope.button = reportProblemOptions.button;
+        $scope.show = $location.path() === '/fulldisplay';
+        $scope.link = reportProblemOptions.base + $httpParamSerializer($location.search());
+    }]
+});
+
+/************************************* END Report Problem ************************************/
 })();

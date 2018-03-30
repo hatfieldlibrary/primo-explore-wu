@@ -75,20 +75,6 @@ app.component('prmFacetRangeAfter', {
 
 /**** END ****/
 
-/** Force Login to the Services Page **/
-
-app.component('prmAuthenticationAfter', {
-    bindings: { parentCtrl: '<' },
-    controller: function controller($location) {
-        this.$onInit = function () {
-            if (($location.search().isSerivcesPage || $location.search().isServicesPage) && !this.parentCtrl.isLoggedIn) {
-                this.parentCtrl.loginService.handleLoginClick();
-            }
-        };
-    }
-});
-
-/**** END ****/
 
 app.component('prmLoansOverviewAfter', {
     bindings: { parentCtrl: '<' },

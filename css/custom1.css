@@ -271,6 +271,80 @@ prm-recomendations .weak-text {
 .bookplate {
     display: none;
 }
+/* hide the more link */
+#getit_link2 {
+    display: none;
+}
+/* New Chat widget Add */
+.chat-tab, .chat-frame-wrap{
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+    border: 0 none;
+    z-index: 200;
+  }
+  
+  .chat-tab{
+    padding: 10px 10px 8px;
+    font-size: 14px;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+  }
+  
+  .chat-close{
+    border: 0 none;
+    background: #f5f7fa;
+    font-size: 16px;
+    border-radius: 50%;
+    position: absolute;
+    right: -5px;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+  }
+  
+  .chat-close:hover {
+    color: #027bc2;
+  }
+  
+  .chat-frame-wrap{
+    width: 300px;
+  }
+  
+  .chat-frame{
+    width: 300px;
+    height: 280px;
+    vertical-align: bottom;
+    border-radius: 3px 3px 0 0;
+  }
+  .facet-to-left .page-nav, .facet-to-left prm-page-nav-menu {
+    left: inherit;
+    right: 1em;
+    direction: rtl;
+    margin-bottom: 20px;
+}
+#chat_widget_icon svg {
+    fill: yourTextColor;
+  }
+  
+  .chat-tab{
+    color: yourTextColor;
+    background: #f8f6f2;
+  }
+
+#fffcc4
+
+@media only screen and (max-width: 960px) {
+    .chat-bottom-padding {
+      bottom: 60px;
+    }
+    body.md-dialog-is-showing .chat-bottom-padding {
+      bottom: 0 !important;
+    }
+  }
+
 
 
 /* print styles */

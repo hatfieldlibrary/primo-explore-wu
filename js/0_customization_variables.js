@@ -13,6 +13,13 @@ app.constant('reportProblemOptions', {
     base: "https://library.willamette.edu/external/exlibris/primonew/reportproblem/index.php?"
   });
   
+// Librarian chat:
 
-
-/************************************* END Chat Area ************************************/
+app.constant('libraryh3lpWidgetConfig', {
+  url: 'https://libraryh3lp.com/chat/hat-help@chat.libraryh3lp.com',
+  prompt: 'Chat with us',
+  icon: {
+    set: 'communication',
+    icon: 'ic_chat_24px'
+  }
+});

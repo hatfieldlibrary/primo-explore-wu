@@ -2,6 +2,6 @@
 
 /* We use a CENTRAL_PACKAGE, so use the below line to bootstrap the module */
 
-var app = angular.module('viewCustom', ['angularLoad', 'reportProblem']);
+var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'libraryh3lpWidget']);
 
 /************************************* END Bootstrap Script ************************************/

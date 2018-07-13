@@ -3,9 +3,7 @@
 angular
   // Name our module
   .module('giftBooks', [])
-  // Add the libraryh3lp url to trusted url sources
-  // so angular doesn't block it from an iframe
-  
+ 
   // Controller for the component below
   .controller('giftBookController', ['$scope', function ($scope) {
     var vm = this;

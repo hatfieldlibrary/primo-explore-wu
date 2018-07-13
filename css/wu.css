@@ -267,10 +267,10 @@ div.#resourceInformationHeader {
 prm-recomendations .weak-text {
     display: none;
 }
-/* bookplate hide */
+/* bookplate hide  */
 .bookplate {
     display: none;
-}
+   }
 /* hide the more link */
 #getit_link2 {
     display: none;
@@ -326,15 +326,18 @@ prm-recomendations .weak-text {
     margin-bottom: 20px;
 }
 #chat_widget_icon svg {
-    fill: yourTextColor;
+    fill: #87cacf;
 }
   
 .chat-tab{
-    color: yourTextColor;
-    background: #f8f6f2;
+    color: #87cacf;
+    background: #000000;
 }
 
 @media only screen and (max-width: 960px) {
+   .chat-tab {
+       display: none;
+   }
     .chat-bottom-padding {
       bottom: 60px;
     }

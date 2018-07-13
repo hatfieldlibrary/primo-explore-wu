@@ -17,9 +17,17 @@ app.constant('reportProblemOptions', {
 
 app.constant('libraryh3lpWidgetConfig', {
   url: 'https://libraryh3lp.com/chat/hat-help@chat.libraryh3lp.com',
-  prompt: 'Chat with us',
+  prompt: 'Chat with Librarian',
   icon: {
     set: 'communication',
     icon: 'ic_chat_24px'
   }
+});
+
+// Hide institutions:
+
+app.constant('showHideMoreInstOptions', {
+  default_state: "hidden",
+  show_label: "Show libraries",
+  hide_label: "Hide libraries"
 });

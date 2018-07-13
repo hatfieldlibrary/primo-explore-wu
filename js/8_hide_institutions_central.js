@@ -1,9 +1,8 @@
-
 /************************************* Begin Central Package Hide Institutions ************************************/
 
+app.component('prmAlmaMoreInstAfter', { template: '<toggle-institutions />' });
 
-angular.element(document).ready(function(){
-    hide_show_other_institutions();
-});
+
+
 
 /************************************* END Call Central Package Hide Institutions ************************************/

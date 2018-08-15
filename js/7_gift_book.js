@@ -16,8 +16,9 @@ angular
          vm.donor = vm.array[i];
          if (vm.donor.includes("$$IWU") && vm.donor.includes("Gift of") ) { 
              vm.donor_chop = vm.donor.replace("$$IWU","");
+             vm.donor_chop_url = vm.donor_chop.split('(')[0];
              vm.just_donor = vm.donor_chop.replace("Gift of","");
-             vm.url = "http://alliance-primo.hosted.exlibrisgroup.com/primo-explore/search?query=any,contains," + vm.donor_chop + "&tab=default_tab&search_scope=WU_Libraries_Summit&sortby=rank&vid=WU&mode=advanced&offset=0";    
+             vm.url = "http://alliance-primo.hosted.exlibrisgroup.com/primo-explore/search?query=any,contains," + vm.donor_chop_url + "&tab=default_tab&search_scope=WU_Libraries_Summit&sortby=rank&vid=WU&mode=advanced&offset=0";    
              vm.show = "display:inline;";}
      }      
      }else {vm.show = "display: none";}

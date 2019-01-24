@@ -217,7 +217,7 @@ prm-main-menu[menu-type=menu] .md-button {
     color: #009900;
 }
 /* e-journal search bar color fix */
-.prm-primary-bg, prm-browse-search-bar, prm-journals-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar{
+.prm-primary-bg, prm-browse-search-bar, prm-atoz-search-bar, prm-search-bar, prm-newspapers-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar{
     background-color: #791716;
     color: #999999;
 }

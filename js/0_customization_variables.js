@@ -31,3 +31,4 @@ app.constant('showHideMoreInstOptions', {
   show_label: "Show libraries",
   hide_label: "Hide libraries"
 });
+

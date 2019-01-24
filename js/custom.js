@@ -8,7 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* We use a CENTRAL_PACKAGE, so use the below line to bootstrap the module */
 
-var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'libraryh3lpWidget']);
+var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'libraryh3lpWidget', 'giftBooks', 'toggleInstitutions']);
 
 /************************************* END Bootstrap Script ************************************/
 
@@ -26,27 +26,26 @@ app.constant('reportProblemOptions', {
   base: "https://library.willamette.edu/external/exlibris/primonew/reportproblem/index.php?"
 });
 
-/************************* BEGIN New Chat Area */
+// Librarian chat:
 
 app.constant('libraryh3lpWidgetConfig', {
   url: 'https://libraryh3lp.com/chat/hat-help@chat.libraryh3lp.com',
-  prompt: 'Chat with us',
+  prompt: 'Chat with Librarian',
   icon: {
     set: 'communication',
     icon: 'ic_chat_24px'
   }
 });
 
-/*****************  END New Chat Area */
+// Hide institutions:
 
-/************************************* END Chat Area ************************************/
+app.constant('showHideMoreInstOptions', {
+  default_state: "hidden",
+  show_label: "Show libraries",
+  hide_label: "Hide libraries"
+});
 
 /************************************* BEGIN Chat Area ************************************/
-
-/*
-app.component('prmSearchBookmarkFilterAfter', {
-    template: '<a href="http://library.willamette.edu/ref/ask"><img src="custom/WU/img/ic_forum_gray_24px.svg" </a>'
-});*/
 
 angular
 // Name our module
@@ -85,17 +84,8 @@ angular
 });
 /************************************* END Chat Area ************************************/
 
-/************************************* BEGIN Open Access Area ************************************/
-
-app.constant('oadoiOptions', {
-  "imagePath": "custom/LCC/img/oa_50.png",
-  "email": "bkelm@willamette.edu"
-}
-
-/************************************* END Open Access Area ************************************/
-
 /** Show search scopes by default on basic searches **/
-);app.component('prmSearchBarAfter', {
+app.component('prmSearchBarAfter', {
   bindings: { parentCtrl: '<' },
   controller: 'SearchBarAfterController'
 });
@@ -140,41 +130,45 @@ app.component('prmLoansOverviewAfter', {
   template: '<div class=tiles-grid-tile><div class="layout-column tile-content"layout=column><div class="layout-column tile-header"layout=column><div class="layout-align-space-between-stretch layout-row"layout=row layout-align=space-between><h2 class="header-link light-text"role=button tabindex=0><span>Interlibrary Loan</span></h2></div></div><md-list class="layout-column md-primoExplore-theme"layout=column role=list></md-list><div class="layout-column layout-align-center-center layout-margin layout-padding message-with-icon"layout=column layout-align="center center"layout-margin=""layout-padding=""><div><span><a' + ' href="http://library.willamette.edu/illiad/illiad.dll?Action=10&Form=62" target="_blank">Log into your ILL account</a> to check pending requests and view articles.</span></div></div></div></div>'
 });
 
-/**** Begin Gift Book Section *****/
+/************************************* BEGIN Gift Book Area ************************************/
 
-app.component('prmBriefResultAfter', {
-  bindings: { parentCtrl: '<' },
-  controller: 'prmBriefResultAfterController',
-  template: '<span style="{{$ctrl.show}}">A gift of <a href="{{$ctrl.url}}"> {{$ctrl.just_donor}}</a></span>'
-});
-app.controller('prmBriefResultAfterController', function () {
+angular
+// Name our module
+.module('giftBooks', []
+
+// Controller for the component below
+).controller('giftBookController', ['$scope', function ($scope) {
   var vm = this;
   vm.donor = {};
-  vm.show = "display:none;";
+  vm.show = "display:none";
   if (this.parentCtrl.item.pnx.display.lds06 != null) {
     vm.array = this.parentCtrl.item.pnx.display.lds06;
 
     for (var i = 0, len = vm.array.length; i < len; i++) {
       vm.donor = vm.array[i];
-      if (vm.donor.includes("$$IWU") && vm.donor.includes("Gift of")) {
+      if (vm.donor.includes("$$IWU") && vm.donor.includes("of")) {
         vm.donor_chop = vm.donor.replace("$$IWU", "");
-        vm.just_donor = vm.donor_chop.replace("Gift of", "");
-        vm.url = "http://alliance-primo.hosted.exlibrisgroup.com/primo-explore/search?query=any,contains," + vm.donor_chop + "&tab=default_tab&search_scope=WU_Libraries_Summit&sortby=rank&vid=WU&mode=advanced&offset=0";
+        vm.donor_chop_url = vm.donor_chop.split('(')[0];
+        vm.just_gift = vm.donor_chop.split('of')[0];
+        vm.just_donor = vm.donor_chop.split('of').pop();
+        vm.url = "http://alliance-primo.hosted.exlibrisgroup.com/primo-explore/search?query=any,contains," + vm.donor_chop_url + "&tab=default_tab&search_scope=WU_Libraries_Summit&sortby=rank&vid=WU&mode=advanced&offset=0";
         vm.show = "display:inline;";
       }
     }
   } else {
-    vm.show = "display:none;";
+    vm.show = "display: none";
   }
+}]).component('prmBriefResultAfter', {
+  bindings: {
+    parentCtrl: '<' },
+  controller: 'giftBookController',
+  template: '<span ng-attr-style="{{$ctrl.show}}"> {{$ctrl.just_gift}} of <a href="{{$ctrl.url}}"> {{$ctrl.just_donor}}</a></span>'
 });
-
-/**** End Gift Section *****/
+/************************************* END Chat Area ************************************/
 
 /************************************* Begin Central Package Hide Institutions ************************************/
 
-angular.element(document).ready(function () {
-  hide_show_other_institutions();
-});
+app.component('prmAlmaMoreInstAfter', { template: '<toggle-institutions />' });
 
 /************************************* END Call Central Package Hide Institutions ************************************/
 

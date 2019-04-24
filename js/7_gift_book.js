@@ -19,7 +19,8 @@ angular
              vm.donor_chop_url = vm.donor_chop.split('(')[0];
              vm.just_gift = vm.donor_chop.split('of')[0];
              vm.just_donor = vm.donor_chop.split('of').pop();
-             vm.url = "http://alliance-primo.hosted.exlibrisgroup.com/primo-explore/search?query=any,contains," + vm.donor_chop_url + "&tab=default_tab&search_scope=WU_Libraries_Summit&sortby=rank&vid=WU&mode=advanced&offset=0";    
+             vm.url_donor = escape(vm.donor_chop_url);
+             vm.url = "http://alliance-primo.hosted.exlibrisgroup.com/primo-explore/search?query=any,contains," + vm.url_donor + "&tab=default_tab&search_scope=WU_Libraries_Summit&sortby=rank&vid=WU&mode=advanced&offset=0";    
              vm.show = "display:inline;";
             }
      }      
@@ -29,7 +30,8 @@ angular
     bindings: { 
     parentCtrl: '<' },
     controller: 'giftBookController',
-    template: '<span ng-attr-style="{{$ctrl.show}}"> {{$ctrl.just_gift}} of <a href="{{$ctrl.url}}"> {{$ctrl.just_donor}}</a></span>'
+    //template: '<span ng-attr-style="{{$ctrl.show}}"><a href="{{$ctrl.url}}"> {{$ctrl.donor_chop_url}}</a></span>'
+    template: '<span ng-attr-style="{{$ctrl.show}}"> {{$ctrl.just_gift}} of <a href="{{$ctrl.url}}" target="_blank"> {{$ctrl.just_donor}}</a></span>'
 });
 /************************************* END Chat Area ************************************/
 

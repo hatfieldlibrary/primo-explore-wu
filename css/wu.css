@@ -267,10 +267,6 @@ div.#resourceInformationHeader {
 prm-recomendations .weak-text {
     display: none;
 }
-/* bookplate hide  */
-.bookplate {
-    display: none;
-   }
 /* hide the more link */
 #getit_link2 {
     display: none;

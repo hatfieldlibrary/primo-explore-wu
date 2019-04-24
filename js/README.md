@@ -1,4 +1,4 @@
-# Willamette's Custom Javacript Files for Primo
+# Willamette's Custom Javacript Files for Primo (currently not working as Primo code changed)
 
 This directory contains the various javascript files we use with our instance of the Primo New UI.
 

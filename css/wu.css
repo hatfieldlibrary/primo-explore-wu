@@ -193,7 +193,7 @@ prm-brief-result-container .list-item-primary-content:before {
 }
 
 /* Hide the tags option */
-#tags {display:none;}
+#tags {display:none;} 
 button[aria-label="Tags"]{display:none;}
 
 
@@ -201,14 +201,13 @@ button[aria-label="Tags"]{display:none;}
     background: transparent;
 }
 .item-expanded .secondary-content-holder .md-tab:nth-child(1), .item-expanded .secondary-content-holder md-tab-item:nth-child(1) {
-    display:none;
-}
-
+ display:none;
+ }
 
 /* bigger font in header */
 
 prm-main-menu[menu-type=menu] .md-button {
-
+  
     font-size: .80em;
 }
 
@@ -217,7 +216,7 @@ prm-main-menu[menu-type=menu] .md-button {
     color: #009900;
 }
 /* e-journal search bar color fix */
-.prm-primary-bg, prm-browse-search-bar, prm-atoz-search-bar, prm-search-bar, prm-newspapers-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar{
+.prm-primary-bg, prm-browse-search-bar, prm-atoz-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar{
     background-color: #791716;
     color: #999999;
 }
@@ -226,11 +225,11 @@ prm-main-menu[menu-type=menu] .md-button {
 
 prm-user-area .user-menu-button .user-name {
 
-    text-transform: none;
-    font-weight: 600;
-    color: #fff;
-    text-align: left;
-    max-width: 150px;
+        text-transform: none;
+        font-weight: 600;
+        color: #fff;
+        text-align: left;
+        max-width: 150px;
 
 }
 
@@ -240,11 +239,11 @@ prm-user-area .user-menu-button .user-name {
 }
 
 
-
+  
 /* chat.css begin */
 
 .chat {
-    padding-left: .6em;
+padding-left: .6em;
 
 }
 
@@ -258,23 +257,20 @@ div.result-item-image > div.media-content-images {
 /* Resource Request Fixes */
 
 div.#resourceInformationHeader {
-    display: none;}
+display: none;}
 }
 
 #deliveryInformationHeader h2 {
     display: none;
 }
-prm-recomendations .weak-text {
-    display: none;
-}
-/* hide the more link */
-#getit_link2 {
+/* bookplate hide */
+.bookplate {
     display: none;
 }
 /* New Chat widget Add */
 .chat-tab, .chat-frame-wrap{
     position: fixed;
-    bottom: 0px;
+    bottom: 250px;
     right: 10px;
     border: 0 none;
     z-index: 200;
@@ -322,18 +318,16 @@ prm-recomendations .weak-text {
     margin-bottom: 20px;
 }
 #chat_widget_icon svg {
-    fill: #87cacf;
+    fill: yourTextColor;
 }
   
 .chat-tab{
-    color: #87cacf;
-    background: #000000;
+    color: yourTextColor;
+    background: #f8f6f2;
 }
-
-@media only screen and (max-width: 960px) {
-   .chat-tab {
-       display: none;
-   }
+  
+  
+  @media only screen and (max-width: 960px) {
     .chat-bottom-padding {
       bottom: 60px;
     }
@@ -341,45 +335,3 @@ prm-recomendations .weak-text {
       bottom: 0 !important;
     }
   }
-
-
-
-/* print styles */
-@media print {
-    /* hide the sidebar/facets */
-    .sidebar {display:none;}
-
-    /* hide the floating page navigation element */
-    prm-page-nav-menu {display:none;}
-
-    /* hide the mobile footer toolbar for refining results */
-    .bottom-fixed-toolbar {display:none;}
-
-    /* hide the floating scroll to top and pin icons */
-    #fixed-buttons-holder {display:none;}
-
-    /* hide the search bar area */
-    prm-search-bar {display:none;}
-
-    /* hide the entire primo header */
-    .header.topbar-wrapper {display:none;}
-
-    /* hide the white space section opposite the facets sidebar */
-    .flex-order-4.flex-lg-15.flex-xl-25.flex-xl-10.flex-md-0.flex-lg-5.flex-0 {display:none;}
-
-    /* hide the load more search results link */
-    .button-confirm[translate="nui.brief.results.loadMore"] {display:none;}
-
-    /* hide the white space section below the search results */
-    .list-spacer {display:none;}
-
-    /* hide page number */
-    .md-subheader {display:none;}
-
-    /*hide the Alert Bar*/
-    prm-alert-bar {display: none;}
-
-    /*hide the "# Results"*/
-    #mainResults > div.results-title.layout-align-start-center.layout-row {display: none;}
-
-}

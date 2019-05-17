@@ -245,6 +245,7 @@ prm-user-area .user-menu-button .user-name {
 .chat {
 padding-left: .6em;
 
+
 }
 
 
@@ -270,7 +271,7 @@ display: none;}
 /* New Chat widget Add */
 .chat-tab, .chat-frame-wrap{
     position: fixed;
-    bottom: 250px;
+    bottom: 800px;
     right: 10px;
     border: 0 none;
     z-index: 200;

@@ -271,7 +271,7 @@ display: none;}
 /* New Chat widget Add */
 .chat-tab, .chat-frame-wrap{
     position: fixed;
-    bottom: 800px;
+    bottom: 700px;
     right: 10px;
     border: 0 none;
     z-index: 200;
@@ -335,4 +335,5 @@ display: none;}
     body.md-dialog-is-showing .chat-bottom-padding {
       bottom: 0 !important;
     }
+    .default-card {display: none;}
   }

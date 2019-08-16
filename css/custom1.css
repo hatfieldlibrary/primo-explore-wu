@@ -268,6 +268,20 @@ display: none;}
 .bookplate {
     display: none;
 }
+/*Prefix publication dates with "Publication date: "*/
+span[data-field-selector="creationdate"] {
+    display: block;
+  }
+  span[data-field-selector="creationdate"]::before {
+    content: "Publication date: ";
+  }
+/*Prefix edition info with "Edition: "*/
+span[data-field-selector="edition"] {
+    display: block;
+  }
+  span[data-field-selector="edition"]::before {
+    content: "Edition: ";
+  }
 /* New Chat widget Add */
 .chat-tab, .chat-frame-wrap{
     position: fixed;

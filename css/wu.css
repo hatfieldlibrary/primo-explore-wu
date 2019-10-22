@@ -282,11 +282,17 @@ span[data-field-selector="edition"] {
   span[data-field-selector="edition"]::before {
     content: "Edition: ";
   }
+/*Hide peer_reviewed text notice*/
+span[data-field-selector="lds50"] {
+    display: none;
+  }
+
+
 /* New Chat widget Add */
 .chat-tab, .chat-frame-wrap{
     position: fixed;
-    bottom: 700px;
-    right: 10px;
+    bottom: 0px;
+    right: 0px;
     border: 0 none;
     z-index: 200;
   }
@@ -342,10 +348,10 @@ span[data-field-selector="edition"] {
 }
   
   
-  @media only screen and (max-width: 960px) {
-    .chat-bottom-padding {
-      bottom: 60px;
-    }
+@media only screen and (max-width: 960px) {
+    .chat-tab, .chat-frame-wrap{
+        display: none;
+      }
     body.md-dialog-is-showing .chat-bottom-padding {
       bottom: 0 !important;
     }

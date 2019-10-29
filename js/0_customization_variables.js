@@ -32,3 +32,14 @@ app.constant('showHideMoreInstOptions', {
   hide_label: "Hide libraries"
 });
 
+// My ILL
+app.constant('illiadOptions', {
+  "groups": ["CLAFACULTY", "CLASTUDENT"],
+  "remoteScript": "https://library.willamette.edu/scripts/my-ill/illiad.php",
+  "boxTitle": "Hatfield Interlibrary Loan",
+  "illiadURL": "https://illiad.willamette.edu/illiad/illiad.dll?Action=10&Form=10",
+  "apiURL": "https://illiad.willamette.edu/ILLiadWebPlatform/Transaction/UserRequests/",
+
+
+})
+

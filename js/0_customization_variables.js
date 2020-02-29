@@ -32,9 +32,15 @@ app.constant('showHideMoreInstOptions', {
   hide_label: "Hide libraries"
 });
 
+// oadoi-links:
+app.constant('oadoiOptions', {
+  "imagePath": "custom/WU/img/oa_50.png",
+  "email": "library@willamette.edu"
+})
+
 // My ILL
 app.constant('illiadOptions', {
-  "groups": ["CLAFACULTY", "CLASTUDENT"],
+  "groups": ["CLAFACULTY", "CLASTUDENT", "ATKFACULTY", "ADMIN", "LIBRARY", "EXTDCHECK", "EMERITUS", "ATKSTUDENT", "TIUAFACULTY", "ATKPORTLAND", "WUSTAFF", "LIBSTAFF", "CSTSTUDENT", "CSTFACULTY", "CSTSTAFF"],
   "remoteScript": "https://library.willamette.edu/scripts/my-ill/illiad.php",
   "boxTitle": "Hatfield Interlibrary Loan",
   "illiadURL": "https://illiad.willamette.edu/illiad/illiad.dll?Action=10&Form=10",

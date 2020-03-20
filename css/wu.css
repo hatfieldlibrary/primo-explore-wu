@@ -287,6 +287,11 @@ span[data-field-selector="lds50"] {
     display: none;
   }
 
+/*Hide other library collections*/
+prm-record-collection-paths
+
+{ display: none; }
+
 
 /* New Chat widget Add */
 .chat-tab, .chat-frame-wrap{
@@ -346,7 +351,17 @@ span[data-field-selector="lds50"] {
     color: yourTextColor;
     background: #f8f6f2;
 }
-  
+/** COVID-19 Summit Stopped Warning **/
+body::before {
+    content: "Due to library closures, Summit and ILL books and videos are unavailable until further notice. However, you can still request articles through ILL.";
+    display: inline-block;
+    background: #ecd90f;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+
   
 @media only screen and (max-width: 960px) {
     .chat-tab, .chat-frame-wrap{

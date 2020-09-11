@@ -13,7 +13,18 @@ app.constant('reportProblemOptions', {
     base: "https://library.willamette.edu/external/exlibris/primonew/reportproblem/index.php?"
   });
   
-// Librarian chat:
+  app.constant('smsActionOptions', {
+    label: "Text Call Number",
+    index: 0,
+    icon: {
+      icon: 'ic_textsms_24px',
+      iconSet: 'communication',
+      type: 'svg'
+    },
+    libraries: 'HAT: Hatfield Library, LAW: Law Library'
+});
+
+  // Librarian chat:
 
 app.constant('libraryh3lpWidgetConfig', {
   url: 'https://libraryh3lp.com/chat/hat-help@chat.libraryh3lp.com',

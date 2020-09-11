@@ -352,7 +352,7 @@ prm-record-collection-paths
     background: #f8f6f2;
 }
 /** COVID-19 Summit Stopped Warning **/
-/* body::before {
+ /*body::before {
     content: "Due to library closures, Summit and ILL books and videos are unavailable until further notice. However, you can still request articles through ILL.";
     display: inline-block;
     background: #ecd90f;
@@ -361,6 +361,14 @@ prm-record-collection-paths
     font-weight: bold;
 }*/
 /* Styles for COVID banner */
+/* Clear advanced search screen backdrop so shadow shows from menu bar */
+prm-search-bar .advanced-search-backdrop {
+    background-color: transparent;
+    }
+/*Make Switch to Simple Search Button White*/
+div.search-switch-buttons.hide-xs.layout-sm-column.layout-align-sm-start-stretch.facet-to-left-advanced-search button {
+    color: #fff;
+}
 div.covidBanner {
     width: 80%;
     max-width: 960px;
@@ -372,7 +380,18 @@ div.covidBanner {
     color: #333;
     font-size: 20px;
 }
-  
+/*div.covidBanner a {
+    color: #c22033;
+    transition: all 400ms cubic-bezier(0.11, 0.93, 0.44, 0.92);
+}
+div.covidBanner a:hover,
+div.covidBanner a:focus {
+    color: #333;
+    background-color: rgba(194, 32, 51, 0.15);
+    box-shadow: none;
+}*/
+
+
 @media only screen and (max-width: 960px) {
     .chat-tab, .chat-frame-wrap{
         display: none;

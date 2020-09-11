@@ -2,7 +2,7 @@
 /************************************* BEGIN Report Problem ************************************/
 
 angular.module('reportProblem', []).component('prmActionListAfter', {
-    template: '<div ng-if="show" class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">\
+    template: '<sms-action /><div ng-if="show" class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">\
           <span class="margin-right-small">{{ message }}</span>\
           <a ng-href="{{ link }}" target="_blank">\
               <button class="button-with-icon zero-margin md-button md-button-raised md-primoExplore-theme md-ink-ripple" type="button" aria-label="Report a Problem" style="color: #5c92bd;">\

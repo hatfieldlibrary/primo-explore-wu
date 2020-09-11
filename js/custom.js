@@ -8,7 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* We use a CENTRAL_PACKAGE, so use the below line to bootstrap the module */
 
-var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'libraryh3lpWidget', 'giftBooks', 'toggleInstitutions', 'myILL', 'oadoi']);
+var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'libraryh3lpWidget', 'giftBooks', 'toggleInstitutions', 'myILL', 'oadoi', 'customActions', 'smsAction']);
 
 /************************************* END Bootstrap Script ************************************/
 
@@ -24,6 +24,17 @@ app.constant('reportProblemOptions', {
   message: "See something that doesn't look right?",
   button: "Report a Problem",
   base: "https://library.willamette.edu/external/exlibris/primonew/reportproblem/index.php?"
+});
+
+app.constant('smsActionOptions', {
+  label: "Text Call Number",
+  index: 0,
+  icon: {
+    icon: 'ic_textsms_24px',
+    iconSet: 'communication',
+    type: 'svg'
+  },
+  libraries: 'HAT: Hatfield Library, LAW: Law Library'
 });
 
 // Librarian chat:
@@ -49,21 +60,21 @@ app.constant('showHideMoreInstOptions', {
 app.constant('oadoiOptions', {
   "imagePath": "custom/WU/img/oa_50.png",
   "email": "library@willamette.edu"
-}
+});
 
 // My ILL
-);app.constant('illiadOptions', {
+app.constant('illiadOptions', {
   "groups": ["CLAFACULTY", "CLASTUDENT", "ATKFACULTY", "ADMIN", "LIBRARY", "EXTDCHECK", "EMERITUS", "ATKSTUDENT", "TIUAFACULTY", "ATKPORTLAND", "WUSTAFF", "LIBSTAFF", "CSTSTUDENT", "CSTFACULTY", "CSTSTAFF"],
   "remoteScript": "https://library.willamette.edu/scripts/my-ill/illiad.php",
   "boxTitle": "Hatfield Interlibrary Loan",
   "illiadURL": "https://illiad.willamette.edu/illiad/illiad.dll?Action=10&Form=10",
   "apiURL": "https://illiad.willamette.edu/ILLiadWebPlatform/Transaction/UserRequests/"
 
-}
+});
 
 /************************************* BEGIN Reserve Request ************************************/
 
-);angular.module('reservesRequest', []).component('prmLoginAlmaMashupAfter', {
+angular.module('reservesRequest', []).component('prmLoginAlmaMashupAfter', {
   bindings: { parentCtrl: '<' },
   controller: function controller($scope, $http, $element, dataService, $mdDialog, reserveRequestOptions) {
 
@@ -369,12 +380,12 @@ angular.module('myILL', []).component('prmLoansOverviewAfter', {
       });
     }
   };
-}]
+}]);
 
 /************************************* END My ILL ************************************/
 
 /************************************* BEGIN oadoi-link ************************************/
-);angular.module('oadoi', []).component('prmFullViewServiceContainerAfter', {
+angular.module('oadoi', []).component('prmFullViewServiceContainerAfter', {
   bindings: { parentCtrl: '<' },
   controller: function controller($scope, $http, $element, oadoiService, oadoiOptions) {
     this.$onInit = function () {
@@ -446,18 +457,18 @@ angular.module('myILL', []).component('prmLoansOverviewAfter', {
 
 angular
 // Name our module
-.module('libraryh3lpWidget', []
+.module('libraryh3lpWidget', [])
 // Add the libraryh3lp url to trusted url sources
 // so angular doesn't block it from an iframe
-).filter('trustUrl', ['$sce', function ($sce) {
+.filter('trustUrl', ['$sce', function ($sce) {
   return function (url) {
     if (/^http(s)?:\/\/(.+\.)?libraryh3lp\.com.+$/.test(url)) {
       return $sce.trustAsResourceUrl(url);
     }
   };
-}]
+}])
 // Controller for the component below
-).controller('libraryh3lpWidgetController', ['libraryh3lpWidgetConfig', '$scope', function (libraryh3lpWidgetConfig, $scope) {
+.controller('libraryh3lpWidgetController', ['libraryh3lpWidgetConfig', '$scope', function (libraryh3lpWidgetConfig, $scope) {
   var ctrl = this;
   this.$onInit = function () {
     $scope.config = libraryh3lpWidgetConfig;
@@ -481,20 +492,20 @@ angular
 });
 /************************************* END Chat Area ************************************/
 
-/** Show search scopes by default on basic searches **/
+/** Show search scopes by default on basic searches **
 app.component('prmSearchBarAfter', {
-  bindings: { parentCtrl: '<' },
-  controller: 'SearchBarAfterController',
-  template: '<div class="covidBanner"><p>Summit and ILL books and videos are unavailable until further notice. However, you can still request articles through <a href="https://libguides.willamette.edu/interlibraryloan">ILL</a>. For all changes see the <a href="https://library.willamette.edu/wordpress/blog/2020/03/20/update-on-library-services/" target="_blank">Update on Library Services</a>.</div>'
+    bindings: { parentCtrl: '<' },
+    controller: 'SearchBarAfterController',
+    template: '<div class="covidBanner"><p>Summit and Interlibrary Loan books and videos are unavailable until further notice. However, you can still request articles through <a href="https://libguides.willamette.edu/interlibraryloan">ILL</a>. For all changes see the <a href="https://libguides.willamette.edu/c.php?g=1016697&p=7475598" target="_blank">Update on Library Services</a>.</div>'
 });
-
+*/
 /*
 app.component('prmSearchBarAfter', {
     bindings: {parentCtrl: '<'},
     controller: 'SearchBarAfterController'
     
 });
- */
+*/
 app.controller('SearchBarAfterController', ['angularLoad', function (angularLoad) {
   var vm = this;
   vm.parentCtrl.showTabsAndScopes = true;
@@ -524,10 +535,10 @@ app.component('prmFacetRangeAfter', {
 
 angular
 // Name our module
-.module('giftBooks', []
+.module('giftBooks', [])
 
 // Controller for the component below
-).controller('giftBookController', ['$scope', function ($scope) {
+.controller('giftBookController', ['$scope', function ($scope) {
   var vm = this;
   vm.donor = {};
   vm.show = "display:none";
@@ -564,7 +575,7 @@ app.component('prmAlmaMoreInstAfter', { template: '<toggle-institutions />' });
 /************************************* BEGIN Report Problem ************************************/
 
 angular.module('reportProblem', []).component('prmActionListAfter', {
-  template: '<div ng-if="show" class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">\
+  template: '<sms-action /><div ng-if="show" class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">\
           <span class="margin-right-small">{{ message }}</span>\
           <a ng-href="{{ link }}" target="_blank">\
               <button class="button-with-icon zero-margin md-button md-button-raised md-primoExplore-theme md-ink-ripple" type="button" aria-label="Report a Problem" style="color: #5c92bd;">\

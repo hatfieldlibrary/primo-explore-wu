@@ -375,7 +375,10 @@ span.umnHathiTrustLink md-icon svg {
 span.umnHathiTrustLink:hover md-icon svg {
   filter: grayscale(0%);
 }
-
+/** External Search Facet **/
+#facets .available-facets:nth-child(4) {
+    order: 1;
+ }
 
 /** COVID-19 Summit Stopped Warning **/
  /*body::before {

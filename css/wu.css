@@ -362,6 +362,21 @@ prm-record-collection-paths
 }
 #smsForm md-input-container {display:flex;}
 
+#HathiTrust 
+span.umnHathiTrustLink {
+  margin-left: -5px;
+}
+
+span.umnHathiTrustLink md-icon svg {
+  height: 1.2em;
+  filter: grayscale(100%);
+}
+
+span.umnHathiTrustLink:hover md-icon svg {
+  filter: grayscale(0%);
+}
+
+
 /** COVID-19 Summit Stopped Warning **/
  /*body::before {
     content: "Due to library closures, Summit and ILL books and videos are unavailable until further notice. However, you can still request articles through ILL.";

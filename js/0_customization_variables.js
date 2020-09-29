@@ -21,7 +21,8 @@ app.constant('reportProblemOptions', {
       iconSet: 'communication',
       type: 'svg'
     },
-    libraries: 'HAT: Hatfield Library, LAW: Law Library'
+    libraries: 'HAT: Hatfield Library, LAW: Law Library',
+    institution: 'WU'
 });
 
   // Librarian chat:

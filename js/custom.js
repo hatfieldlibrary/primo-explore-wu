@@ -8,7 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* We use a CENTRAL_PACKAGE, so use the below line to bootstrap the module */
 
-var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'libraryh3lpWidget', 'giftBooks', 'toggleInstitutions', 'myILL', 'oadoi', 'customActions', 'smsAction', 'hathiTrustAvailability', 'externalSearch']);
+var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'libraryh3lpWidget', 'giftBooks', 'toggleInstitutions', 'myILL', 'oadoi', 'customActions', 'smsAction', 'hathiTrustAvailability', 'forceLogin', 'externalSearch']);
 
 /************************************* END Bootstrap Script ************************************/
 

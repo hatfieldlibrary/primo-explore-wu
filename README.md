@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # Willamette Customizations
 This repository is based on the Development Environment provided by ExLibris. See this github repo:

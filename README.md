@@ -5,7 +5,7 @@ This repository is based on the Development Environment provided by ExLibris. Se
 
 https://github.com/ExLibrisGroup/primo-explore-devenv
 
-Local customizations are found in the [primo-explore/custom/WU](https://github.com/hatfieldlibrary/primo-explore-wu/tree/master/primo-explore/custom) directory.  The color theme customization process
+Local customizations are found in the [primo-explore/custom](https://github.com/hatfieldlibrary/primo-explore-wu/tree/master/primo-explore/custom) directory.  The color theme customization process
 is described at https://github.com/ExLibrisGroup/primo-explore-package/tree/master/VIEW_CODE/css
 
 The PROXY_SERVER variable in gulp/config.js file is set to use the Willamette sandbox Primo instance. 

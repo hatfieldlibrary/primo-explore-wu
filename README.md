@@ -9,6 +9,7 @@ is described at https://github.com/ExLibrisGroup/primo-explore-package/tree/mast
 
 The PROXY_SERVER variable in gulp/config.js file is set to use the Willamette sandbox Primo instance. 
 
+Before using the development environment be sure to add Angular modules defined in the Alliance CENTRAL_PACKAGE.
 
 # ExLibris Documentation for the Customization Workflow Development Environment
 

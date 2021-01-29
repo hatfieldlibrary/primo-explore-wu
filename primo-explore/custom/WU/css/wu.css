@@ -15,8 +15,9 @@ md-content.main {
 }
 /* The item side menu is uses absolute position and needs to be lower
    to avoid overlap with the result box. */
-.prm-full-view-dialog prm-full-view .services-index-under {
-    top: 220px;
+.prm-full-view-dialog prm-full-view .services-index-under,
+prm-full-view-cont prm-full-view .services-index-under {
+    top: 246px;
 }
 /* Override dark primary color for opaque background. */
 md-backdrop.md-opaque {

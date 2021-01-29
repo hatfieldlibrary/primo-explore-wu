@@ -3,21 +3,9 @@
 body {
     background-color: #f9f9f9;
 }
-/* Item brief result summary could use a container. */
-prm-brief-result-container {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    min-height: 170px;
-}
 /* Lighten up the main content area, but leave a bit of grey for contrast. */
 md-content.main {
     background-color: #f9f9f9;
-}
-/* The item side menu is uses absolute position and needs to be lower
-   to avoid overlap with the result box. */
-.prm-full-view-dialog prm-full-view .services-index-under,
-prm-full-view-cont prm-full-view .services-index-under {
-    top: 246px;
 }
 /* Override dark primary color for opaque background. */
 md-backdrop.md-opaque {

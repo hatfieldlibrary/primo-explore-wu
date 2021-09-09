@@ -6,7 +6,7 @@
 
 /* We use a CENTRAL_PACKAGE, so use the below line to bootstrap the module */
 
-var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'giftBooks', 'toggleInstitutions', 'oadoi', 'customActions', 'smsAction', 'hathiTrustAvailability', 'forceLogin', 'externalSearch']);
+var app = angular.module('viewCustom', ['angularLoad', 'reportProblem', 'giftBooks', 'toggleInstitutions', 'oadoi', 'customActions', 'hathiTrustAvailability', 'forceLogin', 'externalSearch']);
 
 /************************************* END Bootstrap Script ************************************/
 

@@ -110,7 +110,37 @@ angular
     "email": "library@willamette.edu"
   });
   
-  /******** end oadoi local options ***************/
+/******** end oadoi local options ***************/
+
+/********** begin same tab menu links **************/
+
+app.component('prmTopNavBarLinksAfter', {
+  bindings:
+  {parentCtrl: '<'}
+  
+  ,
+  controller: function controller($document, $scope) {
+  this.$onInit = function() {
+  /Must wait for menu items to appear/
+  var elCheck = setInterval(updateLinks, 1000);
+  function updateLinks() {
+  //console.log("anythihng")
+  if( $document[0].querySelectorAll("div.top-nav-bar-links > div").length>0 ){
+  var menuItems=$document[0].querySelectorAll("div.top-nav-bar-links > div")
+  for (var i = 0; i < menuItems.length; i++)
+  { var mItem = menuItems[i]; var anchor = mItem.querySelector("div > a"); anchor.target="_self" }
+  
+  clearInterval(elCheck);
+  //return;
+  }
+  
+  }
+  
+  }
+  }
+  });
+/********** end same tab menu links **************/
+
 
 /************* BEGIN Problem Report and SMS action ********/
 

@@ -1236,6 +1236,12 @@ alma-htgi-tabs alma-howovp button.neutralized-button.md-button:focus:not([disabl
 alma-htgi-tabs alma-howovp button.neutralized-button.md-button div.md-list-item-text
 { padding: 3px 4px; }
 
+/* Increase size of "Item is not available to be requested from Summit" text on Summit request form, make red - Primo VE */
+prm-request .item-not-available
+{ color: #ff0000; font-size: 16px; } 
+
+
+
 /* Styles for COVID banner */
 /* Clear advanced search screen backdrop so shadow shows from menu bar */
 prm-search-bar .advanced-search-backdrop {
